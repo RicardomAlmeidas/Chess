@@ -1,47 +1,21 @@
 package metier;
 
+import domaine.Pawn;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
+
+import domaine.*;
+
 public class GameManagement {
-    private String[][] gameState =
-            {{"br", "bh", "bb", "bq", "bk", "bb", "bh", "br"},
-                    {"bp", "bp", "bp", "bp", "bp", "bp", "bp", "bp"},
-                    {"f", "f", "f", "f", "f", "f", "f", "f"},
-                    {"f", "f", "f", "f", "f", "f", "f", "f"},
-                    {"f", "f", "f", "f", "f", "f", "f", "f"},
-                    {"f", "f", "f", "f", "f", "f", "f", "f"},
-                    {"wp", "wp", "wp", "wp", "wp", "wp", "wp", "wp"},
-                    {"wr", "wh", "wb", "wk", "wq", "wb", "wh", "wr"}};
-    private String ROOK = "r";
-    private String KNIGHT = "h";
-    private String BISHOP = "b";
-    private String QUEEN = "q";
-    private String KING = "k";
-    private String PAWN = "p";
-    
+    private HashMap<String, ArrayList<Piece>> pieces = new HashMap<>();
+
+
 
     private void pieceGeneration() {
-        for(String[] lign : gameState) {
-            for(String square : lign) {
-                if(square.length() > 1) {
-                    switch (square.charAt(1)){
-                        case PAWN:
-                            break;
-                        case ROOK:
-                            break;
-                        case KNIGHT:
-                            break;
-                        case BISHOP:
-                            break;
-                        case QUEEN:
-                            break ;
-                        case KING:
-                            break;
-                        case KING:
-                            break;
-                    }
-                }
-            }
-        }
+        pieces.put("Black", new ArrayList<>());
+        pieces.put("White", new ArrayList<>());
+        pieces.get("Black").add(new Rook("Black", new int[]{0, 0}));
     }
 }
